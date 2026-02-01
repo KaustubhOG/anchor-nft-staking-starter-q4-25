@@ -1,10 +1,12 @@
 use anchor_lang::prelude::*;
 
-mod errors;
-mod instructions;
-mod state;
+pub mod errors;
+pub mod instructions;
+pub mod state;
 
-use instructions::*;
+pub use errors::*;
+pub use instructions::*;
+pub use state::*;
 
 declare_id!("YFbRgpLHGbKisGA8GYY1ToRH1tAD4ZRLaRvFwHYkoot");
 
@@ -37,15 +39,15 @@ pub mod anchor_nft_staking_q4_25 {
         ctx.accounts.mint_nft()
     }
 
-    // pub fn stake(ctx: Context<Stake>) -> Result<()> {
-    //     ctx.accounts.stake(&ctx.bumps)
-    // }
+    pub fn stake(ctx: Context<Stake>) -> Result<()> {
+        ctx.accounts.stake(&ctx.bumps)
+    }
 
-    // pub fn unstake(ctx: Context<Unstake>) -> Result<()> {
-    //     ctx.accounts.unstake()
-    // }
+    pub fn unstake(ctx: Context<Unstake>) -> Result<()> {
+        ctx.accounts.unstake()
+    }
 
-    // pub fn claim(ctx: Context<Claim>) -> Result<()> {
-    //     ctx.accounts.claim()
-    // }
+    pub fn claim(ctx: Context<Claim>) -> Result<()> {
+        ctx.accounts.claim()
+    }
 }
